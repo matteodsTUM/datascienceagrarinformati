@@ -1,0 +1,4 @@
+Befehle um die Rechte zu ändern der Datein in der flask app
+
+sudo chown www-data:www-data -R /var/www/test  => Nutzerrechte für den Ordner (test)
+sudo chmod -R g+s /var/www/test
