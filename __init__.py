@@ -206,7 +206,7 @@ if __name__ == '__main__':
 
     logging.basicConfig(filename='error.log')
     logging.getLogger('werkzeug').setLevel(logging.INFO)
-#    app.run(debug=False)  # production mode
-    app.run(debug=True, port=1337)  # debug mode
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))  # debug mode
 
+   
 
