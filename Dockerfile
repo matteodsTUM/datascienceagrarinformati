@@ -9,7 +9,19 @@ WORKDIR $APP_HOME
 COPY . ./
 
 # Install production dependencies.
-RUN pip install --no-cache-dir -r requirements.txt
+#RUN pip install --no-cache-dir -r requirements.txt
+
+RUN pip3 install numpy
+RUN pip3 install Flask
+RUN pip3 install gunicorn
+RUN pip3 install Flask_Login
+RUN pip3 install Flask_SQLAlchemy
+RUN pip3 install pandas
+RUN pip3 install pylint
+RUN pip3 install typing
+RUN pip3 install scikit-learn
+RUN pip3 install xgboost
+
 #RUN pip install gunicorn
 
 # Run the web service on container startup. Here we use the gunicorn
