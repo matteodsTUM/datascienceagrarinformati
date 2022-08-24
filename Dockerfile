@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3
 
 # Allow statements and log messages to immediately appear in the Knative logs
 ENV PYTHONUNBUFFERED True
@@ -9,20 +9,8 @@ WORKDIR $APP_HOME
 COPY . ./
 
 # Install production dependencies.
-#RUN pip install --no-cache-dir -r requirements.txt
-
-RUN pip3 install numpy
-RUN pip3 install Flask
-RUN pip3 install gunicorn
-RUN pip3 install Flask_Login
-RUN pip3 install Flask_SQLAlchemy
-RUN pip3 install pandas
-RUN pip3 install pylint
-RUN pip3 install typing
-RUN pip3 install scikit-learn
-RUN pip3 install xgboost
-
-#RUN pip install gunicorn
+RUN pip install -r requirements.txt
+RUN pip install gunicorn
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
