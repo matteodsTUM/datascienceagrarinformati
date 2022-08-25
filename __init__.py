@@ -1,4 +1,5 @@
 #author: @mvbOnline
+
 from typing import Text
 from backend import Backend
 from flask import Flask, url_for, request, render_template, redirect, session, g, send_file, flash, make_response
@@ -207,6 +208,3 @@ if __name__ == '__main__':
     logging.basicConfig(filename='error.log')
     logging.getLogger('werkzeug').setLevel(logging.INFO)
     app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))  # debug mode
-
-   
-
